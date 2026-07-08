@@ -4,17 +4,11 @@ class Solution {
         for(int i = 1; i <= n; i++){
             q.offer(i);
         }
-        int t = k;
         while(q.size() > 1){
-           
-            if(t > 1){
-                q.offer(q.poll());
-                t--;
-                continue;
+            for(int i = 1; i < k; i++){
+                q.add(q.remove());   //add first to the last 
             }
-
             q.remove();
-            t = k;
         }
         return q.peek();
     }
