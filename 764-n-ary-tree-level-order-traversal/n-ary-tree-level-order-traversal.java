@@ -33,10 +33,10 @@ class Solution {
             for(int i = 0; i < levelNum; i++){
                 Node curr = q.poll();
                 list.add(curr.val);
-                // for(Node child:curr.children){
-                //     q.offer(child);
-                // }
-                q.addAll(curr.children);
+                for(Node child:curr.children){
+                    q.offer(child);
+                }
+                //q.addAll(curr.children);
             }
             flist.add(list);
         }
