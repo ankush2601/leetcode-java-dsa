@@ -7,13 +7,14 @@ class Solution {
 
         while(r < n){
             map.put(nums[r],map.getOrDefault(nums[r],0)+1);
-            while(map.size() > 2){
+            if(map.size() > 2){
                 map.put(nums[l],map.getOrDefault(nums[l],0)-1);
                 if(map.get(nums[l]) == 0){
                     map.remove(nums[l]);
                 }
                 l++;
-
+                r++;
+                continue;
             }           
             max = Math.max(max,r-l+1);            
             r++;
