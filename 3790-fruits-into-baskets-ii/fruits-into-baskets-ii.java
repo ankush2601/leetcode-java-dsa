@@ -2,22 +2,24 @@ class Solution {
     public int numOfUnplacedFruits(int[] fruits, int[] baskets) {
         int n = fruits.length;
         boolean visit[] = new boolean[n];
-        for(int i = 0; i < n; i++){
-            //int f = fruits[i];
-            for(int j = 0; j < n; j++){
-               // int b = baskets[j];
-                if((baskets[j] >= fruits[i] ) && visit[j] ==false){
-                    visit[j] = true;
+        int l = 0;
+        while(l < n){
+            int start = 0;
+            while(start < n){
+                if((fruits[l] <= baskets[start]) && visit[start] == false){
+                    visit[start] = true;
                     break;
                 }
+                start++;
+            }
+            l++;
+        }
+        int c = 0;
+        for(boolean count : visit){
+            if(count == false){
+                c++;
             }
         }
-        int ans = 0;
-        for(int i = 0; i < n; i++){
-            if(visit[i] == false){
-                ans++;
-            }
-        }
-        return ans;
+        return c;
     }
 }
