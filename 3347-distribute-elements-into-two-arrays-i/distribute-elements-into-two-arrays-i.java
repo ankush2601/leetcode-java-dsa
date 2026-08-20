@@ -12,14 +12,13 @@ class Solution {
             }
             l2.add(nums[i]);
         }
-        int[] n1 = new int[l1.size()];
-        int[] n2 = new int[l2.size()];
+        
         int i = 0,j = 0;
-        while(i < n1.length){
+        while(i < l1.size()){
             nums[i] = l1.get(i);
             i++;
         }
-         while(j < n2.length){
+         while(j < l2.size()){
             nums[i+j] = l2.get(j);
             j++;
         }
