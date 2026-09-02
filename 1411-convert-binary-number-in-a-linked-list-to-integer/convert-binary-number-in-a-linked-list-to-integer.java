@@ -17,8 +17,7 @@ class Solution {
             temp = temp.next;
 
         }
-        int ans = 0;
-        int ind = 0;
+        int ans = 0, ind = 0;
         for(int i = res.length()-1; i >= 0; i--){
             if(res.charAt(i) == '1'){
                 ans +=  (int)Math.pow(2,ind++) ;
