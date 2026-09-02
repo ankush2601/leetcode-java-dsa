@@ -20,10 +20,14 @@ class Solution {
         int ans = 0;
         int ind = 0;
         for(int i = res.length()-1; i >= 0; i--){
-            int sum =  (int)Math.pow(2,ind++) ;
-            sum *= res.charAt(i)-'0';
-            ans += sum;
-            sum = 0;
+            if(res.charAt(i) == '1'){
+                ans +=  (int)Math.pow(2,ind++) ;
+                continue;
+            }
+             
+            else{
+                ind++;
+            }
         }
         return ans;
     }
