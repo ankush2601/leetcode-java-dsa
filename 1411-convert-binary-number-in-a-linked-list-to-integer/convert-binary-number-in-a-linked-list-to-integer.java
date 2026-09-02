@@ -24,10 +24,7 @@ class Solution {
                 ans +=  (int)Math.pow(2,ind++) ;
                 continue;
             }
-             
-            else{
-                ind++;
-            }
+            ind++;
         }
         return ans;
     }
