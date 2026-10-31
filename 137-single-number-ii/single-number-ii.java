@@ -1,16 +1,18 @@
 class Solution {
     public int singleNumber(int[] nums) {
-
-        HashMap<Integer,Integer> map = new HashMap<>();
-
-        for(int num:nums){              //store key with its fre
-            map.put(num,map.getOrDefault(num,0)+1);
+        int res = 0, n = nums.length;
+        for(int i = 0; i < 32; i++){
+            int c = 0;
+            for(int j = 0; j < n; j++){
+                if((nums[j] & (1 << i)) != 0){      // (ele & (1 << index): count 1's of each number on each bit
+                    c++;
+                } 
+            }
+            // all element appearing thrice except a single element : so modulo by 3
+            if(c % 3 != 0) {
+                res = res | (1<<i);
+            }
         }
-
-        for(int key:map.keySet()){      //return that key which has fre == 1
-            if(map.get(key) == 1) return key;
-        }
-        return -1;
+        return res;
     }
-
 }
