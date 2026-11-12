@@ -8,11 +8,11 @@ class Solution {
                 inc++;
                 dec = 1;
             }
-            if(nums[i] < nums[i-1]){
+            else if(nums[i] < nums[i-1]){
                 dec++;
                 inc = 1;
             }
-            if(nums[i] == nums[i-1]){
+            else{
                 inc = 1;
                 dec = 1;
             }
