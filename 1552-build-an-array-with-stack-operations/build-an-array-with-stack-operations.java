@@ -11,10 +11,9 @@ class Solution {
                 ind++;
                 continue;
             }
-            else{
-                list.add("Pop");
-            }
 
+            list.add("Pop");
+            
         }
         return list;
     }
