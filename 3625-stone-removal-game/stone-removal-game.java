@@ -6,6 +6,9 @@ class Solution {
             tar--;
             c++;
         }
-        return c%2==1;
+        if(tar % 2 == 1){
+            return true;
+        }
+        return false;
     }
 }
